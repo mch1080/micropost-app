@@ -1,6 +1,12 @@
-//const person = require('./mymodule1');
+import { http } from './http';
+import { ui } from './ui';
 
-import { person } from './mymodule2'
 
-console.log(person.name);
+// Get pots on DOM load
+document.addEventListener('DOMContentLoaded', getPosts)
 
+function getPosts() {
+  http.get('http://localhost:3000/posts')
+  .then(data => ui.showPosts(data))
+  .catch(err => console.log(err))
+}
