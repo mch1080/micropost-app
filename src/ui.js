@@ -36,26 +36,26 @@ class UI {
     this.clearAlert();
 
     // Create div
-    const div = document.createElement('div');
+    const div = document.createElement("div");
     // Add classes
     div.className = className;
     // Add text
     div.appendChild(document.createTextNode(message));
     // Get parent
-    const container = document.querySelector('.postsContainer')
+    const container = document.querySelector(".postsContainer");
     // Get posts
-    const posts = document.querySelector('#posts');
+    const posts = document.querySelector("#posts");
     // Insert alert div
     container.insertBefore(div, posts);
 
     // Timeout( clearAlert is called after 2.5sec)
     setTimeout(() => {
       this.clearAlert();
-    }, 2500)
+    }, 2500);
   }
 
   clearAlert() {
-    const currentAlert = document.querySelector('.alert');
+    const currentAlert = document.querySelector(".alert");
 
     if (currentAlert) {
       currentAlert.remove();
@@ -63,11 +63,9 @@ class UI {
   }
 
   clearFields() {
-    this.titleInput.value = '';
-    this.bodyInput.value = '';
-
+    this.titleInput.value = "";
+    this.bodyInput.value = "";
   }
-
 }
 
 export const ui = new UI();
